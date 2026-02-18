@@ -9,7 +9,7 @@ from bot.handlers.donate_hand import rout as don_rt
 from bot.handlers.menu_hand import rout as start_rt
 from bot.handlers.about_hand import rout as about_rt
 from bot.handlers.modpack_hand import rout as modpack_rout
-from bot.handlers.addon_hand import rout as addon_rout
+from bot.handlers.addon_hand import rt as addon_rout
 from bot.handlers.admin_panel_mod import rt as pn_rt_mod
 from bot.handlers.admin_panel_addon import rt as pn_rt_addon
 from bot.middlewares.throttling import ThrottlingMiddleware,CallbackThrottlingMiddleware
@@ -47,3 +47,4 @@ if __name__ == '__main__':
         asyncio.run(main())
     except KeyboardInterrupt:
         print('бот остановил работу.')
+
