@@ -3,10 +3,9 @@ from aiogram.types import CallbackQuery, InputMediaAnimation
 
 from bot.keyboard.about_kb import my_bio
 
-rt = Router()
+rout = Router()
 
-
-@rt.callback_query(F.data == 'about_author')
+@rout.callback_query(F.data == 'about_author')
 async def donate_handler(callback: CallbackQuery, bot: Bot):
     chat_id = callback.message.chat.id
     message_id = callback.message.message_id
