@@ -13,7 +13,8 @@ from aiogram.fsm.state import State, StatesGroup
 from bot.database.db_modpacks import add_modpack, delete_modpack
 from bot.keyboard.mod_kb import all_modpacks_for_delete
 
-ADMIN_ID = int(os.getenv('ADMIN_ID'))
+admin_env = os.getenv('ADMIN_ID')
+ADMIN_ID = [int(admin_env)] if admin_env else []
 
 rt = Router()
 
@@ -302,4 +303,5 @@ async def process_bulk_zip(message: types.Message, state: FSMContext, bot: Bot):
             shutil.rmtree(temp_dir, ignore_errors=True)
         except:
             pass
+
         await state.clear()
